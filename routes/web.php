@@ -117,3 +117,69 @@ Route::get('data', function(){
     return view('data-siswa', compact('data'));
 });
 
+Route::get('siswa', function () {
+    $siswas = [
+        ['id' => 1,
+        'nama' => 'Adya',
+        'username' => 'adya',
+        'email' => 'adya13@gmail.com',
+        'alamat' => 'Bandung',
+        'mapel' => [
+                    'mapel1' => 'Bahasa Indonesia',
+                    'mapel2' => 'Bahasa Inggris',
+                    'mapel3' => 'Bahasa jepang',
+        ]
+        ],
+        ];
+    return view('siswa', compact('siswas'));
+});
+
+// hobi
+Route::get('hobi', function () {
+    $data = [
+        ['nis' => 1001,
+        'nama' => 'Adya',
+        'kelas' => '12 RPL 1',
+        'hobii' => [
+                    'hobi1' => 'Memasak',
+                    'hobi2' => 'Makan',
+                    'hobi3' => 'Rebahan',
+        ]
+        ],
+        ['nis' => 1002,
+        'nama' => 'Amel',
+        'kelas' => '12 RPL 1',
+        'hobii' => [
+                    'hobi1' => 'Berenang',
+                    'hobi2' => 'Makan',
+                    'hobi3' => 'Membaca',
+        ]
+        ],
+
+        ];
+    return view('hobi', compact('data'));
+});
+
+
+//post
+Route::get('/testmodel', function() {
+$query = App\Models\Post::all();
+return $query;
+});
+
+Route::get('/test-post', function() {
+$query = App\Models\Post::all();
+return view('test-post', compact('query'));
+});
+
+
+//biodata
+Route::get('/biodata', function() {
+$query = App\Models\biodata::all();
+return $query;
+});
+
+Route::get('/test-biodata', function() {
+$query = App\Models\biodata::all();
+return view('test-biodata', compact('query'));
+});
