@@ -1,7 +1,11 @@
 <?php
-
+use App\Http\Controllers\PesanansController;
+use App\Http\Controllers\SupliersController;
 use App\Http\Controllers\MyController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\BarangController;
+use App\Http\Controllers\PembeliansController;
+use App\Http\Controllers\PembelisController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,9 +19,9 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+ Route::get('/', function () {
+     return view('welcome');
+ });
 
 // Route::get('/biodata', function () {
 //     return 'Adya Eka Amelia <br>
@@ -192,6 +196,13 @@ use Illuminate\Support\Facades\Route;
 // });
 
 //controller
-Route::get('/contoh', [MyController::class,'tampilkan']);
-Route::get('/artikel', [PostController::class,'data']);
+// Route::get('/contoh', [MyController::class,'tampilkan']);
+// Route::get('/artikel', [PostController::class,'data']);
+
+// tugas
+Route::get('/barang', [BarangController::class,'tampil']);
+Route::get('/pesanan', [PesanansController::class,'muncul']);
+Route::get('/pembelian', [PembeliansController::class,'munculkan']);
+Route::get('/pembeli', [PembelisController::class,'tampilkan']);
+Route::get('/suplier', [SupliersController::class,'datadeh']);
 
